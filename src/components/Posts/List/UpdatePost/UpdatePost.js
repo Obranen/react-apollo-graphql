@@ -3,8 +3,6 @@ import {useState} from 'react'
 const UpdatePost = ({updatePost, id}) => {
   const [form, setForm] = useState({title: '', views: '', userId: ''})
 
-  console.log(id)
-
   const titleChange = (e) => {
     setForm({...form, title: e.currentTarget.value})
   }
