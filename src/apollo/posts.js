@@ -1,7 +1,7 @@
 import {gql} from '@apollo/client'
 
 export const POSTS = gql `
-  query posts {
+  query Posts {
     posts: allPosts {
       id
       title
@@ -12,7 +12,7 @@ export const POSTS = gql `
 `
 
 export const ADD_POST = gql `
-  mutation addPost($title: String!, $views: Int!, $user_id: ID!) {
+  mutation AddPost($title: String!, $views: Int!, $user_id: ID!) {
     newPost: createPost (title: $title, views: $views, user_id: $user_id) {
       id
       title
@@ -22,7 +22,7 @@ export const ADD_POST = gql `
 `
 
 export const UPDATE_POST = gql `
-  mutation updatePost ($id: ID!, $title: String!, $views: Int!, $user_id: ID!) {
+  mutation UpdatePost ($id: ID!, $title: String!, $views: Int!, $user_id: ID!) {
     updatePost (id:$id, title: $title, views: $views, user_id: $user_id) {
       id
       title
@@ -32,7 +32,7 @@ export const UPDATE_POST = gql `
   }
 `
 export const REMOVE_POST = gql `
-  mutation removePost ($id: ID!) {
+  mutation RemovePost ($id: ID!) {
     removePost (id:$id) {
       id
     }
